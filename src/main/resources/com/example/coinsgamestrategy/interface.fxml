@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="814.0" prefWidth="1600.0" style="-fx-background-color: skyblue;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.coinsgamestrategy.Controller">
+    <VBox alignment="CENTER" maxHeight="782.0" maxWidth="877.0" minHeight="781.0" minWidth="784.0" prefHeight="782.0" prefWidth="784.0" spacing="20.0">
+        <padding>
+            <Insets bottom="20.0" left="70.0" right="70.0" top="20.0" />
+        </padding>
+        <HBox alignment="CENTER" prefHeight="50.0" prefWidth="852.0" spacing="20.0">
+            <Label alignment="CENTER" contentDisplay="CENTER" minHeight="-Infinity" nodeOrientation="LEFT_TO_RIGHT" prefHeight="50.0" prefWidth="232.0" text="Coins (separates by commas):">
+                <font>
+                    <Font name="Comic Sans MS" size="14.0" />
+                </font>
+            </Label>
+            <TextField fx:id="list" alignment="CENTER" onAction="#solution" prefHeight="50.0" prefWidth="350.0" promptText="Integers seperating by commas" style="-fx-background-radius: 40; -fx-font-size: 12;">
+                <font>
+                    <Font name="Comic Sans MS" size="14.0" />
+                </font>
+            </TextField>
+           <Button mnemonicParsing="false" onAction="#solution" prefHeight="46.0" prefWidth="116.0" style="-fx-background-color: rgba(0, 0, 0, 0.6); -fx-background-radius: 40;" text="calculate" textFill="SKYBLUE">
+               <font>
+                   <Font size="14.0" />
+               </font>
+           </Button>
+        </HBox>
+        <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="200.0" spacing="20.0">
+            <Label alignment="CENTER" contentDisplay="CENTER" minHeight="-Infinity" nodeOrientation="LEFT_TO_RIGHT" prefHeight="50.0" prefWidth="229.0" text="Maximum possible amount:">
+                <font>
+                    <Font name="Comic Sans MS" size="14.0" />
+                </font>
+            </Label>
+            <TextField fx:id="result" alignment="CENTER" editable="false" prefHeight="50.0" prefWidth="350.0" style="-fx-background-radius: 40; -fx-font-size: 12;">
+                <font>
+                    <Font name="Comic Sans MS" size="14.0" />
+                </font>
+            </TextField>
+         <Button mnemonicParsing="false" onAction="#clearAll" onKeyPressed="#clearAll" prefHeight="46.0" prefWidth="116.0" style="-fx-background-color: rgba(0, 0, 0, 0.6); -fx-background-radius: 40;" text="Clear" textFill="SKYBLUE">
+            <font>
+               <Font size="14.0" />
+            </font>
+         </Button>
+        </HBox>
+        <Label alignment="CENTER" contentDisplay="CENTER" minHeight="-Infinity" nodeOrientation="LEFT_TO_RIGHT" prefHeight="35.0" prefWidth="500.0" text="Dynamic Programming Tabel:">
+            <font>
+                <Font name="Comic Sans MS" size="14.0" />
+            </font>
+        </Label>
+        <ScrollPane prefHeight="352.0">
+            <GridPane fx:id="table" alignment="CENTER" nodeOrientation="LEFT_TO_RIGHT" prefHeight="50.0" prefWidth="641.0">
+                <rowConstraints>
+                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                </rowConstraints>
+            </GridPane>
+        </ScrollPane>
+        <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="200.0" spacing="20.0">
+            <Label alignment="CENTER" contentDisplay="CENTER" minHeight="-Infinity" nodeOrientation="LEFT_TO_RIGHT" prefHeight="50.0" prefWidth="273.0" text="The coins that give the result:">
+                <font>
+                    <Font name="Comic Sans MS" size="14.0" />
+                </font>
+            </Label>
+            <TextField fx:id="coins" alignment="CENTER" editable="false" prefHeight="50.0" prefWidth="313.0" style="-fx-background-radius: 40; -fx-font-size: 12;">
+                <font>
+                    <Font name="Comic Sans MS" size="14.0" />
+                </font>
+            </TextField>
+        </HBox>
+    </VBox>
+    <ScrollPane prefHeight="814.0" prefWidth="817.0" style="-fx-background-color: skyblue;">
+        <VBox alignment="CENTER" fillWidth="false" prefHeight="826.0" prefWidth="806.0" style="-fx-background-color: skyblue;">
+            <HBox fx:id="box" alignment="CENTER" prefHeight="288.0" prefWidth="814.0" spacing="5.0" style="-fx-background-color: skyblue;" />
+            <Button mnemonicParsing="false" onAction="#restart" prefHeight="46.0" prefWidth="116.0" style="-fx-background-color: rgba(0, 0, 0, 0.6); -fx-background-radius: 40;" text="Restart" textFill="SKYBLUE">
+                <font>
+                    <Font size="14.0" />
+                </font>
+            </Button>
+        </VBox>
+    </ScrollPane>
+</HBox>
